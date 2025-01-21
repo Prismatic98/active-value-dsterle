@@ -1,0 +1,72 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.text-block {
+  font-family: "Barlow", sans-serif;
+  padding: $spacing-md;
+  margin-top: $spacing-md;
+
+  &__date {
+    margin-bottom: $spacing-xs;
+    letter-spacing: 3px;
+    color: $gray;
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    font-weight: 700;
+  }
+
+  &__headline {
+    color: $black;
+    font-size: $font-size-lg;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    margin-bottom: $spacing-xxl;
+
+    @include desktop {
+      font-size: $font-size-xxl;
+      margin-bottom: $spacing-xxxl;
+    }
+  }
+
+  &__text,
+  &__description {
+    display: block;
+    font-size: $font-size-sm;
+    color: $gray;
+    margin-bottom: $spacing-md;
+
+    @include desktop {
+      font-size: $font-size-md;
+      margin-bottom: $spacing-lg;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    margin-top: $spacing-xl;
+
+    @include desktop {
+      margin-top: $spacing-xxxl;
+    }
+
+    a {
+      display: block;
+      margin-right: $spacing-md;
+      transition: transform 300ms;
+
+      &:hover {
+        @include icon-hover-style;
+      }
+
+      svg {
+        width: $icon-size-sm;
+        height: $icon-size-sm;
+
+        @include desktop {
+          width: $icon-size-md;
+          height: $icon-size-md;
+        }
+      }
+    }
+  }
+}

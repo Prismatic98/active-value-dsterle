@@ -60,15 +60,7 @@
     margin: $spacing-md 0;
 
     a:hover {
-      svg {
-        path {
-          fill: $primary-color;
-        }
-
-        circle {
-          stroke: $primary-color;
-        }
-      }
+      @include icon-hover-style;
     }
 
     @include desktop {
