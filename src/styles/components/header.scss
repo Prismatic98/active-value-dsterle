@@ -5,15 +5,19 @@
   position: fixed;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: $white;
-  padding: $spacing-sm;
   z-index: 100;
 
-  @include desktop {
-    padding: $spacing-lg;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: $spacing-sm;
+
+    @include desktop {
+      padding: $spacing-lg;
+    }
   }
 
   &__logo svg {

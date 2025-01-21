@@ -96,7 +96,7 @@
   }
 
   &__button {
-    @include button-outline($gray, $light-gray, $gray);
+    @include button-outline($gray, $light-gray, $white);
     margin-top: $spacing-md;
 
     @include desktop {

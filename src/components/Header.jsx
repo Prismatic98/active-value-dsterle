@@ -11,17 +11,19 @@ const Header = () => {
   };
 
   return (
-    <header className={`header container ${isNavOpen ? "nav--opened" : ""}`}>
-      <div className={"header__logo"}>
-        <Logo />
-      </div>
-      <div className={"header__nav-trigger"} onClick={handleNavToggle}>
-        <span>Menü</span>
-        <div className={"header__nav-line"}></div>
-        <div className={"header__nav-line"}></div>
-      </div>
-      <div className={`header__nav ${isNavOpen ? "header__nav--open" : ""}`}>
-        <Navigation isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}/>
+    <header className={`header ${isNavOpen ? "nav--opened" : ""}`}>
+      <div className="header__content container">
+        <div className={"header__logo"}>
+          <Logo />
+        </div>
+        <div className={"header__nav-trigger"} onClick={handleNavToggle}>
+          <span>Menü</span>
+          <div className={"header__nav-line"}></div>
+          <div className={"header__nav-line"}></div>
+        </div>
+        <div className={`header__nav ${isNavOpen ? "header__nav--open" : ""}`}>
+          <Navigation isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+        </div>
       </div>
     </header>
   );
