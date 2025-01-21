@@ -8,7 +8,7 @@ import largeJPG from "../assets/images/hero/large.jpg";
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <div className="hero container">
       <picture>
         <source srcSet={smallPNG} type="image/png" media="(max-width: 320px)" />
         <source

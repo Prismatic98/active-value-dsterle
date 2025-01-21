@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import TextBlock from "./components/TextBlock";
+import Newsletter from "./components/Newsletter";
 
 import { ReactComponent as Web } from "./assets/images/icons/web.svg";
 import { ReactComponent as Instagram } from "./assets/images/icons/instagram.svg";
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <main className="container">
+      <main>
         <Hero />
         <TextBlock
           date={"April 2019"}
@@ -44,6 +45,7 @@ function App() {
             },
           ]}
         />
+        <Newsletter />
       </main>
       <Footer />
     </div>

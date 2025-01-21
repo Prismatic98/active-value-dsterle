@@ -1,0 +1,76 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(to right, $primary-color, $lime);
+  padding: $spacing-xxxl $spacing-md;
+  gap: $spacing-sm;
+  color: $white;
+  width: calc(100% - $spacing-xl);
+
+  @include desktop {
+    padding: $spacing-xxl $spacing-md;
+    width: calc(100% - $spacing-xxl * 2);
+  }
+
+  &__description {
+    font-family: "Barlow", sans-serif;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+  }
+
+  &__headline {
+    font-family: "Poppins", sans-serif;
+    font-size: $font-size-lg;
+    font-weight: 700;
+
+    @include desktop {
+      font-size: $font-size-xl;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: $font-size-md;
+    font-weight: 300;
+  }
+
+  &__button {
+    background: transparent;
+    border: 1px solid $white;
+    color: $white;
+    padding: $spacing-md $spacing-xxl;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+
+    &:hover {
+      background: $white;
+      color: $gray;
+    }
+
+    &:disabled {
+      background: $white;
+      color: $gray;
+      cursor: progress;
+    }
+  }
+
+  .toast {
+    position: fixed;
+    top: $spacing-md;
+    right: $spacing-md;
+    background: $primary-color;
+    max-width: 250px;
+  }
+}
