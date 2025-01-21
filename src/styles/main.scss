@@ -1,15 +1,9 @@
 @use "bootstrap/scss/bootstrap";
 
-@use "fonts";
+@use "./fonts";
+@use "./mixins";
 
-body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Barlow", sans-serif;
-}
+@use "./general";
+@use "./components/header";
+@use "./components/footer";
+@use "./components/navigation";
