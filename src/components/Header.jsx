@@ -20,7 +20,9 @@ const Header = () => {
         <div className={"header__nav-line"}></div>
         <div className={"header__nav-line"}></div>
       </div>
-      {isNavOpen && <Navigation></Navigation>}
+      <div className={`header__nav ${isNavOpen ? "header__nav--open" : ""}`}>
+        <Navigation isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen}/>
+      </div>
     </header>
   );
 };

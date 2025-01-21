@@ -3,7 +3,6 @@
 @use "./breakpoints";
 
 @use "./general";
-@use "./links";
 @use "./buttons";
 @use "./components/Header";
 @use "./components/Footer";
@@ -12,3 +11,4 @@
 @use "./components/TextBlock";
 @use "./components/Newsletter";
 @use "./components/TextBlockContainer";
+@use "./components/ContactForm";

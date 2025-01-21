@@ -1,0 +1,21 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "../buttons" as *;
+
+.contact-form {
+  &__header {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  &__group {
+    margin-bottom: $spacing-md;
+  }
+
+  &__submit {
+    @include button-outline($primary-color, $primary-color, $white);
+    border-radius: 10px;
+    margin-top: $spacing-sm;
+    float: right;
+  }
+}

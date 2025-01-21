@@ -1,4 +1,5 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
 body {
   font-family: "Poppins", sans-serif;
@@ -13,10 +14,10 @@ h3 {
 }
 
 main {
-  padding-top: 65px;
+  padding-top: $nav-height-mobile;
 
   @include desktop {
-    padding-top: 95px;
+    padding-top: $nav-height-desktop;
   }
 }
 

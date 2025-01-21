@@ -54,8 +54,8 @@ function App() {
               headline: "Keine Angst wir beißen nicht.",
               description:
                 "At vero eos et accusam et justo duo dolores et ea rebum at vero eos et accusam et justo duo dolores et ea rebumstet clita kasd gubergren.",
-              buttonText: "Kontakt",
-              buttonLink: "https://www.active-value.de/kontakt",
+              buttonText: "Service",
+              buttonLink: "https://www.active-value.de",
             },
             {
               size: "small",

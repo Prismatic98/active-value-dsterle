@@ -1,7 +1,37 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
 .navigation {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  background-color: $white;
+  width: 100%;
+  height: calc(100vh - $nav-height-mobile);
+  padding: $spacing-md;
+  z-index: 100;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: $spacing-md;
+  }
+  &__link {
+    font-family: "Poppins", sans-serif;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    text-decoration: none;
+    color: $gray;
+
+    @include desktop {
+      font-size: $font-size-xxl;
+    }
+
+    &:hover {
+      color: $light-gray;
+    }
+  }
 }

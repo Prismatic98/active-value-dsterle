@@ -3,12 +3,14 @@
 
 .header {
   position: fixed;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: $white;
   padding: $spacing-sm;
-  z-index: 10;
+  z-index: 100;
 
   @include desktop {
     padding: $spacing-lg;
@@ -65,6 +67,25 @@
       &:last-of-type {
         transform: rotate(45deg) translateX(-11px) translateY(-10px);
       }
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: $nav-height-mobile;
+    right: -100%;
+    width: 100%;
+    height: calc(100% - $nav-height-mobile);
+    transition: transform 0.7s ease-in-out;
+    transform: translateX(0);
+
+    @include desktop {
+      top: $nav-height-desktop;
+      height: calc(100% - $nav-height-desktop);
+    }
+
+    &--open {
+      transform: translateX(-100%);
     }
   }
 }
