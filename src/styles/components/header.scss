@@ -8,6 +8,7 @@
   align-items: center;
   background: $white;
   padding: $spacing-sm;
+  z-index: 10;
 
   @include desktop {
     padding: $spacing-lg;

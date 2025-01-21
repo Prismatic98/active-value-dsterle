@@ -52,7 +52,7 @@
 
   .toast {
     position: fixed;
-    top: $spacing-md;
+    top: calc($spacing-xl * 3);
     right: $spacing-md;
     background: $primary-color;
     max-width: 250px;
