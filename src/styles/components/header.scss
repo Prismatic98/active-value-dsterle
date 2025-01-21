@@ -2,10 +2,11 @@
 @use "../mixins" as *;
 
 .header {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: $white;
   padding: $spacing-sm;
 
   @include desktop {

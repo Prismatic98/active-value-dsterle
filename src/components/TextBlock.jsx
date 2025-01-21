@@ -12,7 +12,7 @@ const Text = ({
 }) => {
   return (
     <div className={`text-block text-block--${size} container`}>
-      <div className="offset-1 offset-xl-1 col-10 col-xl-10">
+      <div className="text-block__content offset-1 offset-xl-1 col-10 col-xl-10">
         <p className="text-block__info">{info}</p>
         <h1 className="text-block__headline">{headline}</h1>
         <p className="text-block__description">{description}</p>

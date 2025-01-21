@@ -12,6 +12,14 @@ h3 {
   font-family: "Barlow", sans-serif;
 }
 
+main {
+  padding-top: 65px;
+
+  @include desktop {
+    padding-top: 95px;
+  }
+}
+
 @include desktop {
   .container {
     max-width: 1260px !important;

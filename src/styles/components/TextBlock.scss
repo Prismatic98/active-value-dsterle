@@ -4,11 +4,17 @@
 
 .text-block {
   font-family: "Barlow", sans-serif;
-  padding: 0;
+  padding: $spacing-sm !important; // override bootstrap;
   margin-top: $spacing-md;
 
   @include desktop {
-    padding: $spacing-md;
+    padding: $spacing-md !important; // override bootstrap;;
+  }
+
+  &__content {
+    @include desktop {
+      padding: $spacing-md;
+    }
   }
 
   &__info {
@@ -34,7 +40,7 @@
   }
 
   &.text-block--small {
-    padding: 5px;
+    padding: 0 !important; // override bootstrap;
 
     .text-block__headline {
       font-size: $font-size-lg;

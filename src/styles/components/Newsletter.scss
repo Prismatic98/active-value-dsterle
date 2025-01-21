@@ -43,10 +43,11 @@
     text-align: center;
     font-size: $font-size-md;
     font-weight: 300;
+    color: $lighter-gray;
   }
 
   &__button {
-    @include button-outline($white, $white, $light-gray);
+    @include button-outline($lighter-gray, $lighter-gray, $light-gray);
   }
 
   .toast {
