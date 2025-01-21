@@ -1,0 +1,89 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 21px;
+
+  p {
+    margin: 0;
+  }
+
+  &__content {
+    .row {
+      flex-direction: column;
+      gap: $spacing-md;
+
+      @include desktop {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+      }
+    }
+  }
+
+  &__address,
+  &__contact,
+  &__column,
+  &__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+
+    @include desktop {
+      align-items: flex-start;
+    }
+  }
+
+  &__column:last-of-type {
+    @include desktop {
+      align-items: flex-end;
+    }
+  }
+
+  &__copy {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    margin: $spacing-md 0;
+
+    a:hover {
+      svg {
+        path {
+          fill: $primary-color;
+        }
+
+        circle {
+          stroke: $primary-color;
+        }
+      }
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-sm;
+
+    @include desktop {
+      justify-content: flex-end;
+    }
+  }
+}

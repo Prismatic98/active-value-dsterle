@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${isNavOpen ? "nav--opened" : ""}`}>
+    <header className={`header container ${isNavOpen ? "nav--opened" : ""}`}>
       <div className={"header__logo"}>
         <Logo />
       </div>

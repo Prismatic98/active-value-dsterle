@@ -1,9 +1,8 @@
-@use "bootstrap/scss/bootstrap";
-
 @use "./fonts";
 @use "./mixins";
 
 @use "./general";
+@use "./links";
 @use "./components/header";
 @use "./components/footer";
 @use "./components/navigation";
