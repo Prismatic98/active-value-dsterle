@@ -1,0 +1,27 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.textBlockContainer {
+  padding: $spacing-xxxl 0;
+  width: calc(100% - $spacing-xl);
+  border-top-right-radius: 50px;
+  margin-top: $spacing-xxxl;
+
+  @include desktop {
+    padding: $spacing-xxl 0;
+    width: calc(100% - $spacing-xxl * 2);
+  }
+
+  &.gray {
+    background-color: $lighter-gray;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+}

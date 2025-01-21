@@ -1,12 +1,17 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../buttons" as *;
 
 .text-block {
   font-family: "Barlow", sans-serif;
-  padding: $spacing-md;
+  padding: 0;
   margin-top: $spacing-md;
 
-  &__date {
+  @include desktop {
+    padding: $spacing-md;
+  }
+
+  &__info {
     margin-bottom: $spacing-xs;
     letter-spacing: 3px;
     color: $gray;
@@ -23,8 +28,22 @@
     margin-bottom: $spacing-xxl;
 
     @include desktop {
-      font-size: $font-size-xxl;
+      font-size: $font-size-xxxl;
       margin-bottom: $spacing-xxxl;
+    }
+  }
+
+  &.text-block--small {
+    padding: 5px;
+
+    .text-block__headline {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-lg;
+
+      @include desktop {
+        font-size: $font-size-xxl;
+        margin-bottom: $spacing-xxl;
+      }
     }
   }
 
@@ -67,6 +86,15 @@
           height: $icon-size-md;
         }
       }
+    }
+  }
+
+  &__button {
+    @include button-outline($gray, $light-gray, $gray);
+    margin-top: $spacing-md;
+
+    @include desktop {
+      margin-top: $spacing-lg;
     }
   }
 }

@@ -1,5 +1,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
+@use "../buttons" as *;
 
 .newsletter {
   display: flex;
@@ -45,25 +46,7 @@
   }
 
   &__button {
-    background: transparent;
-    border: 1px solid $white;
-    color: $white;
-    padding: $spacing-md $spacing-xxl;
-    cursor: pointer;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
-
-    &:hover {
-      background: $white;
-      color: $gray;
-    }
-
-    &:disabled {
-      background: $white;
-      color: $gray;
-      cursor: progress;
-    }
+    @include button-outline($white, $white, $light-gray);
   }
 
   .toast {

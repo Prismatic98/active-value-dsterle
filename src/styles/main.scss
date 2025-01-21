@@ -1,11 +1,14 @@
 @use "./fonts";
 @use "./mixins";
+@use "./breakpoints";
 
 @use "./general";
 @use "./links";
+@use "./buttons";
 @use "./components/Header";
 @use "./components/Footer";
 @use "./components/Navigation";
 @use "./components/Hero";
 @use "./components/TextBlock";
 @use "./components/Newsletter";
+@use "./components/TextBlockContainer";

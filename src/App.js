@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import TextBlock from "./components/TextBlock";
 import Newsletter from "./components/Newsletter";
+import TextBlockContainer from "./components/TextBlockContainer";
 
 import { ReactComponent as Web } from "./assets/images/icons/web.svg";
 import { ReactComponent as Instagram } from "./assets/images/icons/instagram.svg";
@@ -18,7 +19,7 @@ function App() {
       <main>
         <Hero />
         <TextBlock
-          date={"April 2019"}
+          info={"April 2019"}
           headline={"Shopware als starker Partner"}
           description={
             "Wir haben eine Vielzahl von individuellen Webshops für ein diverses Kundenfeld entwickelt und umgesetzt - darunter sind namhafte Unternehmen wie Laack und die Rheinische Post"
@@ -45,6 +46,28 @@ function App() {
             },
           ]}
         />
+        <TextBlockContainer
+          elements={[
+            {
+              size: "small",
+              info: "Service",
+              headline: "Keine Angst wir beißen nicht.",
+              description:
+                "At vero eos et accusam et justo duo dolores et ea rebum at vero eos et accusam et justo duo dolores et ea rebumstet clita kasd gubergren.",
+              buttonText: "Kontakt",
+              buttonLink: "https://www.active-value.de/kontakt",
+            },
+            {
+              size: "small",
+              info: "Jobs",
+              headline: "Du willst ein Teil von uns sein?",
+              description:
+                "At vero eos et accusam et justo duo dolores et ea rebum at vero eos et accusam et justo duo dolores et ea rebumstet clita kasd gubergren.",
+              buttonText: "Jobangebote",
+              buttonLink: "https://www.active-value.de/jobs",
+            },
+          ]}
+        ></TextBlockContainer>
         <Newsletter />
       </main>
       <Footer />

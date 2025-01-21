@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+@mixin button-outline($color, $bgColor, $activeColor: $color) {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid $bgColor;
+  color: $color;
+  padding: $spacing-md $spacing-xl;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background: $bgColor;
+    color: $activeColor;
+  }
+
+  &:disabled {
+    background: $bgColor;
+    color: $activeColor;
+    cursor: progress;
+  }
+}
