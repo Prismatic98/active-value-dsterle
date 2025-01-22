@@ -10,7 +10,7 @@ import References from "./pages/References";
 function App() {
   return (
     <div className="app">
-      <Router basename="/Klima-App">
+      <Router basename="/active-value-dsterle">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/kontakt" element={<Contact />} />
