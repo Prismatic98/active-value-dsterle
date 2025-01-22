@@ -15,7 +15,7 @@ const Header = () => {
     <header className={`header ${isNavOpen ? "nav--opened" : ""}`}>
       <div className="header__content container">
         <div className={"header__logo"}>
-          <Link to="/active-value-dsterle">
+          <Link to="/">
             <Logo />
           </Link>
         </div>

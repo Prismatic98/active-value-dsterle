@@ -10,9 +10,9 @@ import References from "./pages/References";
 function App() {
   return (
     <div className="app">
-      <Router>
+      <Router basename="/Klima-App">
         <Routes>
-          <Route path="/active-value-dsterle" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/kontakt" element={<Contact />} />
           <Route path="/ueber-uns" element={<About />} />
           <Route path="/referenzen" element={<References />} />
