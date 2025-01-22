@@ -20,7 +20,7 @@
   &__info {
     margin-bottom: $spacing-xs;
     letter-spacing: 3px;
-    color: $gray;
+    color: $dark-gray;
     text-transform: uppercase;
     font-size: $font-size-sm;
     font-weight: 700;
@@ -57,12 +57,14 @@
   &__description {
     display: block;
     font-size: $font-size-sm;
+    line-height: 21px;
     color: $gray;
-    margin-bottom: $spacing-md;
+    margin-top: $spacing-md;
 
     @include desktop {
       font-size: $font-size-md;
-      margin-bottom: $spacing-lg;
+      line-height: 26px;
+      margin-top: $spacing-xl;
     }
   }
 
@@ -97,10 +99,5 @@
 
   &__button {
     @include button-outline($gray, $light-gray, $white);
-    margin-top: $spacing-md;
-
-    @include desktop {
-      margin-top: $spacing-lg;
-    }
   }
 }

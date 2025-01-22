@@ -1,41 +1,33 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import { useState } from "react";
 
-const Navigation = ({ isNavOpen, setIsNavOpen }) => {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShow = (e) => {
-    e.preventDefault();
-    setIsNavOpen(false);
-    setShowModal(true);
-  };
-
+const Navigation = () => {
   return (
     <nav className="navigation">
       <ul className="navigation__list container">
         <li className="navigation__item">
-          <a className="navigation__link" href="#">
+          <Link className="navigation__link" to="/active-value-dsterle">
             Startseite
-          </a>
+          </Link>
         </li>
         <li className="navigation__item">
-          <a className="navigation__link" href="#">
+          <Link className="navigation__link" to="/ueber-uns">
             Über uns
-          </a>
+          </Link>
         </li>
         <li className="navigation__item">
-          <a className="navigation__link" href="#Referenzen">
+          <Link className="navigation__link" to="/referenzen">
             Referenzen
-          </a>
+          </Link>
         </li>
         <li className="navigation__item">
-          <a className="navigation__link" href="Kontakt" onClick={handleShow}>
+          <Link className="navigation__link" to="/kontakt">
             Kontakt
-          </a>
+          </Link>
         </li>
       </ul>
-      <ContactForm show={showModal} setShow={setShowModal}/>
     </nav>
   );
 };

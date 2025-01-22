@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
 
-const ContactForm = ({ show, setShow }) => {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
   });
-  const [validated, setValidated] = useState(false);
-
-  const handleClose = () => setShow(false);
+  const [errors, setErrors] = useState({
+    email: false,
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,72 +16,113 @@ const ContactForm = ({ show, setShow }) => {
       ...formData,
       [name]: value,
     });
+
+    if (name === "email") {
+      if (value === "") {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          email: false,
+        }));
+      } else {
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          email: !emailValid,
+        }));
+      }
+    }
   };
 
   const handleSubmit = (e) => {
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.preventDefault();
-      e.stopPropagation();
-    } else {
-      console.log(formData);
-      handleClose();
+    e.preventDefault();
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        email: true,
+      }));
+      return;
     }
-    setValidated(true);
+
+    console.log("Formular mit folgenden Daten abgeschickt: ", formData);
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+    });
+    setErrors({
+      email: false,
+    });
   };
 
   return (
-    <>
-      <Modal className="contact-form" show={show} onHide={handleClose}>
-        <Modal.Header className="contact-form__header">
-          <Modal.Title>Kontaktformular</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Form.Group className="contact-form__group" controlId="formFirstName">
-              <Form.Label>Vorname</Form.Label>
-              <Form.Control
+    <div className="contact-form container">
+      <h1 className="contact-form__headline">Kontakt</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="col-12 col-lg-6">
+            <div className="contact-form__group">
+              <input
                 type="text"
-                placeholder="Vorname eingeben"
+                id="firstName"
                 name="firstName"
+                className="contact-form__input"
                 value={formData.firstName}
                 onChange={handleChange}
+                placeholder="Vorname eingeben"
               />
-            </Form.Group>
-
-            <Form.Group className="contact-form__group" controlId="formLastName">
-              <Form.Label>Nachname</Form.Label>
-              <Form.Control
+              <label htmlFor="firstName" className="contact-form__label">
+                Vorname
+              </label>
+            </div>
+          </div>
+          <div className="col-12 col-lg-6">
+            <div className="contact-form__group">
+              <input
                 type="text"
-                placeholder="Nachname eingeben"
+                id="lastName"
                 name="lastName"
+                className="contact-form__input"
                 value={formData.lastName}
                 onChange={handleChange}
+                placeholder="Nachname eingeben"
               />
-            </Form.Group>
+              <label htmlFor="lastName" className="contact-form__label">
+                Nachname
+              </label>
+            </div>
+          </div>
+        </div>
 
-            <Form.Group className="contact-form__group" controlId="formEmail">
-              <Form.Label>Email*</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              <Form.Control.Feedback type="invalid">
-                Bitte geben Sie eine valide Email-Adresse ein.
-              </Form.Control.Feedback>
-            </Form.Group>
-
-            <button className="contact-form__submit" type="submit">
-              Abschicken
-            </button>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
+        <div className="contact-form__group ">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className={`contact-form__input ${
+              errors.email ? "contact-form__input--error" : ""
+            }`}
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email eingeben"
+            required
+          />
+          <label htmlFor="email" className="contact-form__label">
+            Email*
+          </label>
+          {errors.email && (
+            <span className="contact-form__error">
+              Bitte geben Sie eine gültige E-Mail-Adresse ein.
+            </span>
+          )}
+        </div>
+        <div className="contact-form__group d-flex justify-content-end">
+          <button type="submit" className="contact-form__submit">
+            Senden
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

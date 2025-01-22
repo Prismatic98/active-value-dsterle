@@ -3,19 +3,119 @@
 @use "../buttons" as *;
 
 .contact-form {
+  font-family: "Barlow", sans-serif;
+  padding: $spacing-md 0;
+
   &__header {
     background-color: $primary-color;
-    color: $white;
+    color: $light-gray;
+  }
+
+  &__headline {
+    color: $black;
+    font-size: $font-size-xl;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+
+    @include desktop {
+      font-size: $font-size-xxxl;
+      margin-bottom: $spacing-xxxl;
+    }
   }
 
   &__group {
     margin-bottom: $spacing-md;
+    position: relative;
+    padding: $spacing-sm 0 0;
+    margin-top: $spacing-sm;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: $font-size-md;
+    color: $light-gray;
+  }
+
+  &__input {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $light-gray;
+    outline: 0;
+    font-size: $font-size-lg;
+    color: $light-gray;
+    padding: $spacing-lg 0 $spacing-sm 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .contact-form__label {
+      font-size: $font-size-lg;
+      cursor: text;
+      top: $spacing-xl;
+    }
+
+    &:not(:placeholder-shown):not(.contact-form__input--error) {
+      border-image: linear-gradient(to right, $primary-color, $lime);
+      border-image-slice: 1;
+
+      ~ .contact-form__label {
+        color: $primary-color;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 50px $white inset !important;
+      -webkit-text-fill-color: $light-gray;
+    }
+
+    &:focus:not(.contact-form__input--error) {
+      border-image: linear-gradient(to right, $primary-color, $lime);
+      border-image-slice: 1;
+
+      ~ .contact-form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: $font-size-md;
+        color: $primary-color;
+      }
+
+      padding-bottom: $spacing-sm;
+    }
+
+    &--error {
+      border-bottom: 2px solid $red;
+
+      ~ .contact-form__label {
+        color: $red;
+      }
+    }
+  }
+
+  &__error {
+    display: block;
+    padding-top: $spacing-xs;
+    color: $red;
   }
 
   &__submit {
     @include button-outline($primary-color, $primary-color, $white);
-    border-radius: 10px;
     margin-top: $spacing-sm;
-    float: right;
+    padding: $spacing-sm $spacing-md;
+    width: 100%;
+
+    @include desktop {
+      width: auto;
+    }
   }
 }
