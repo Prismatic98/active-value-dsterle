@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ContactForm from "./ContactForm";
-import { useState } from "react";
 
 const Navigation = () => {
   return (

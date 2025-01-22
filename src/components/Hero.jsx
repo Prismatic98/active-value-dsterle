@@ -21,7 +21,6 @@ const Hero = () => {
         }}
         className="hero__slider"
       >
-        {/* Slide 1 */}
         <SwiperSlide>
           <picture>
             <source
@@ -50,7 +49,6 @@ const Hero = () => {
           </picture>
         </SwiperSlide>
 
-        {/* Slide 2 */}
         <SwiperSlide>
           <picture>
             <source
